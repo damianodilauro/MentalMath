@@ -20,7 +20,7 @@ function generateOperation() {
 function checkAnswer() {
   const userAnswer = parseInt(document.getElementById("answer").value);
   const result = document.getElementById("result");
-  result.innerText = (userAnswer === correctAnswer) ? "Corretto! 🎉" : "Sbagliato 😢";
+  result.innerText = (userAnswer === correctAnswer) ? "Correct! 🎉" : "Wrong 😢";
 }
 
 window.onload = generateOperation;
