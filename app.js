@@ -1,3 +1,7 @@
+document.addEventListener('gesturestart', function (e) {
+  e.preventDefault();
+});
+
 let num1, num2, op, correctAnswer;
 
 function generateOperation() {

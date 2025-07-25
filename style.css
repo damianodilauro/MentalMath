@@ -1,4 +1,5 @@
 body {
+  touch-action: manipulation;
   font-family: Helvetica, sans-serif;
   background: linear-gradient(to bottom, #000000, #000000);
   color: #fff;
