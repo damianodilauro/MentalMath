@@ -57,6 +57,8 @@ function addNumber(num) {
 function deleteAll() {
   const display = document.getElementById("answer-display");
   display.innerText = "0";
+  const result = document.getElementById("result");
+  result.innerText = "";
 }
 
 function deleteLast() {
