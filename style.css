@@ -1,3 +1,14 @@
+@media (hover: none) {
+  button:hover {
+    background-color: inherit !important;
+  }
+}
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
 body {
   touch-action: manipulation;
   font-family: Helvetica, sans-serif;
@@ -15,6 +26,7 @@ body {
 h1 {
   font-size: 2.8em;
   color: #f3bb21;
+  margin-top: -100px;
   margin-bottom: 20px;
 }
 
@@ -22,6 +34,15 @@ h1 {
   font-size: 2.5em;
   margin: 20px 0;
   font-weight: bold;
+  transition: opacity 0.5s ease;;
+}
+
+#operation.fade-out {
+  opacity: 0;
+}
+
+#operation.fade-in {
+  opacity: 1;
 }
 
 input[type="text"] {
@@ -61,6 +82,19 @@ button:hover {
   width: 120px;
   text-align: center;
   border-radius: 8px;
+}
+
+#genOp {
+  padding: 15px;
+  font-size: 1.5em;
+}
+
+#player-input {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
 }
 
 #custom-keyboard {
@@ -110,6 +144,7 @@ button:hover {
 #custom-keyboard button:nth-child(13) {
     grid-row: 2 / span 2;
     padding: 55px 20px;
+    font-size: 1.5em;
 }
 
 #custom-keyboard button:nth-child(14) {
@@ -123,8 +158,19 @@ button:hover {
 }
 
 #result {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-top: 15px;
-  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;  
+  transition: opacity 0.3s ease;
+}
+
+#result.fade-in {
+  opacity: 1;
+}
+
+#result.fade-out {
+  opacity: 0;
 }

@@ -42,7 +42,6 @@ function generateOperation() {
   // Mostra l'operazione
   document.getElementById("operation").innerText = `${num1} ${op} ${num2} = ?`;
   document.getElementById("result").innerText = '';
-  document.getElementById("answer").value = '';
 }
 
 function addNumber(num) {
@@ -74,6 +73,7 @@ function checkAnswer() {
   const rawValue = getAnswerValue().replace(',', '.'); // accetta anche la virgola
   const userAnswer = parseFloat(rawValue);
   const result = document.getElementById("result");
+  const operation = document.getElementById("operation");
 
   let isCorrect = false;
   if (op === '÷') {
@@ -85,10 +85,16 @@ function checkAnswer() {
 
   if (isCorrect) {
     result.innerHTML = `✅ <strong>Correct!</strong>`;
-    result.style.color = "#4CAF50"; // Verde
+    result.style.color = "#4CAF50";
+    operation.classList.add("fade-out");
+    setTimeout(() => {
+      generateOperation();
+      operation.classList.remove("fade-out");
+      operation.classList.add("fade-in");
+    }, 500);
   } else {
-    result.innerHTML = `❌ <strong>Wrong!</strong><br>Correct Answer: <span style="color:yellow">${correctAnswer}</span>`;
-    result.style.color = "#F44336"; // Rosso
+    result.innerHTML = `❌ <strong>Wrong!</strong> &nbsp; Correct Answer: <span style="color:#f3bb21">${correctAnswer}</span>`;
+    result.style.color = "#F44336";
   }
 
   // Effetto di animazione (piccolo fade)

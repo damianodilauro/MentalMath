@@ -18,10 +18,16 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <h1>Mental Math</h1>
+  <h1 id="title">Mental Math</h1>
   <div id="operation"></div>
 
-  <div id="answer-display">0</div>
+  <div id="player-input">
+    <div id="answer-display">0</div>
+    <button id="genOp" onclick="generateOperation()">🎲</button>
+  </div>
+
+  <p id="result"></p>
+
   <div id="custom-keyboard">
     <button onclick="addNumber('1')">1</button>
     <button onclick="addNumber('2')">2</button>
@@ -39,8 +45,6 @@
     <button onclick="checkAnswer()">✅</button>
   </div>
 
-  <button onclick="generateOperation()">🎲</button>
-  <p id="result"></p>
   <script src="app.js"></script>
 </body>
 </html>
